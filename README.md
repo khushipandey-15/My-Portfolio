@@ -62,9 +62,6 @@ The portfolio is fully responsive, adapting to different screen sizes:
 - **Tablet:** Optimized layout with preserved functionality
 - **Mobile:** Streamlined interface with touch-friendly navigation
 
-<div align="center">
-  <img src="public/assets/images/1.png" alt="Responsive Design" width="800">
-</div>
 
 ## 🔍 Project Sections
 
