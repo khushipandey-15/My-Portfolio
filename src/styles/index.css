@@ -1,0 +1,436 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
+
+/* Responsive section padding */
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* Base styles with improved typography and optimized scrolling */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Compensate for fixed header */
+  font-size: 16px;
+  overflow-y: scroll; /* Always show scrollbar to prevent layout shifts */
+  overscroll-behavior: none; /* Prevents bounce effect on some browsers */
+  -ms-overflow-style: none; /* IE/Edge scrollbar */
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0a0e17;
+  color: #e6effe;
+  overflow-x: hidden;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  text-rendering: optimizeLegibility;
+  
+  /* Advanced scroll performance optimizations */
+  will-change: scroll-position;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-y: none;
+  
+  /* Improve performance */
+  backface-visibility: hidden;
+  perspective: 1000;
+  transform-style: preserve-3d;
+}
+
+/* Improved text selection style */
+::selection {
+  background-color: rgba(110, 68, 255, 0.3);
+  color: #e6effe;
+}
+
+/* Heading styles for better hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #e6effe;
+}
+
+h1 { font-size: 2.5rem; letter-spacing: -0.025em; }
+h2 { font-size: 2rem; letter-spacing: -0.02em; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #8892b0;
+}
+
+a {
+  color: #6e44ff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #00e5ff;
+}
+
+/* Text gradient effect */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  background-size: 300% 100%;
+  animation: gradientShift 8s ease infinite;
+  display: inline;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Animation for floating elements */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Animation for pulsing elements */
+@keyframes pulse-slow {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.1); opacity: 0.5; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Hero section animations */
+@keyframes floatUpDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeInSlide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px 0 rgba(0, 229, 255, 0.2); }
+  50% { box-shadow: 0 0 20px 5px rgba(0, 229, 255, 0.4); }
+}
+
+/* Enhanced data point animations */
+.data-point {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  animation: dataPointAppear 4s ease-in-out forwards;
+  mix-blend-mode: screen;
+}
+
+@keyframes dataPointAppear {
+  0% { opacity: 0; transform: translate(0, 0) scale(0); }
+  10% { opacity: var(--opacity, 0.3); transform: translate(0, 0) scale(1); }
+  80% { opacity: var(--opacity, 0.3); transform: translate(var(--moveX, 0), var(--moveY, 0)) scale(1); }
+  100% { opacity: 0; transform: translate(var(--moveX, 0), var(--moveY, 0)) scale(0.5); }
+}
+
+/* Reflection effect for glass elements */
+.glass-reflection {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(-45deg);
+  pointer-events: none;
+  z-index: 2;
+  animation: moveReflection 8s linear infinite;
+}
+
+@keyframes moveReflection {
+  0% { transform: rotate(-45deg) translateX(-50%); }
+  50% { transform: rotate(-45deg) translateX(50%); }
+  100% { transform: rotate(-45deg) translateX(-50%); }
+}
+
+/* Custom utility classes */
+@layer components {
+  .section-padding {
+    padding-top: 1.5rem; 
+    padding-bottom: 1.5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  @media (min-width: 640px) {
+    .section-padding {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .section-padding {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .section-padding {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .section-padding {
+      padding-left: 6rem; /* xl:px-24 */
+      padding-right: 6rem;
+    }
+  }
+  
+  .container {
+    max-width: 80rem; /* max-w-7xl */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem;
+  }
+  
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* sm:px-6 */
+      padding-right: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* lg:px-8 */
+      padding-right: 2rem;
+    }
+  }
+}
+
+/* Component styles with regular CSS */
+.section-title {
+  font-family: 'Poppins', sans-serif; /* font-display */
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 2.5rem; /* mb-10 */
+  color: #e6effe; /* text-light */
+  position: relative;
+  display: inline-block;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 2.25rem; /* md:text-4xl */
+  }
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 0.25rem;
+  background-color: #00e5ff; /* bg-accent */
+}
+
+.highlight {
+  color: #6e44ff; /* text-secondary */
+}
+
+.accent {
+  color: #00e5ff; /* text-accent */
+}
+
+/* Section spacing utilities */
+.section-divider {
+  height: 1.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .section-divider {
+    height: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-divider {
+    height: 2.5rem;
+  }
+}
+
+.section-transition-dark {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-transition-dark::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2rem; /* Reduced from 4rem */
+  background-image: linear-gradient(to bottom, transparent, #050812); /* from-transparent to-dark */
+}
+
+/* Custom animations */
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Scrollbar styling - optimized for performance */
+::-webkit-scrollbar {
+  width: 8px; /* Slightly thinner for better performance */
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050812;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(110, 68, 255, 0.5);
+  border-radius: 8px;
+  border: 2px solid #050812;
+  will-change: auto;
+  
+  /* Additional performance optimizations */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.7);
+}
+
+/* Custom styles for focus states */
+*:focus-visible {
+  outline: 2px solid rgba(0, 229, 255, 0.6);
+  outline-offset: 2px;
+}
+
+/* Add GPU-accelerated scrolling */
+* {
+  transform: translateZ(0);
+}
+
+/* Fix for laggy right scrollbar - High Performance Version */
+:root {
+  --scrollbar-color: rgba(110, 68, 255, 0.5);
+  --scrollbar-track-color: #050812;
+  --scrollbar-width: 8px;
+}
+
+/* Main scrollbar styles */
+body, html {
+  scrollbar-color: var(--scrollbar-color) var(--scrollbar-track-color);
+  scrollbar-width: thin;
+}
+
+/* Hide default scrollbar and use custom one */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+  border-radius: 8px;
+  margin: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 8px;
+  border: 2px solid var(--scrollbar-track-color);
+  
+  /* Hardware acceleration */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+}
+
+/* Firefox scrollbar styles */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(110, 68, 255, 0.5) #050812;
+}
+
+/* Specialized smooth scrolling styles */
+.smooth-scrolling {
+  scroll-behavior: smooth !important;
+  -webkit-overflow-scrolling: touch !important;
+  -ms-overflow-style: -ms-autohiding-scrollbar !important;
+}
+
+.smooth-scrolling-container {
+  /* Use hardware acceleration for smooth rendering */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000;
+}
+
+/* Custom CSS Grid for masonry-like layouts */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-gap: 2rem;
+}

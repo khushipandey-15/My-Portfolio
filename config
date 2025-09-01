@@ -1,0 +1,23 @@
+# Vaibhav GitHub
+Host github-vaibhav
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_vaibhav
+
+# Khushi GitHub
+Host github-khushi
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_khushi
+
+# Andry GitHub
+Host github-andry
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_andry
+
+# Vaishnavi GitHub
+Host github-vaishnavi
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_vaishnavi
