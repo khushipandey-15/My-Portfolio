@@ -189,10 +189,15 @@ const Resume = () => {
     console.log('Resume download initiated');
     
     try {
+      // Using window.location.origin to get the base URL of the site
+      const resumeUrl = `${window.location.origin}/resume.pdf`;
+      console.log('Downloading resume from:', resumeUrl);
+      
       // Create a link element and trigger download
       const link = document.createElement('a');
-      link.href = `${process.env.PUBLIC_URL}/resume.pdf`;
-      link.download = 'Khushboo_Kumari_Resume.pdf';
+      link.href = resumeUrl;
+      link.setAttribute('download', 'Khushboo_Kumari_Resume.pdf');
+      link.setAttribute('target', '_blank');
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
