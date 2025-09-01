@@ -1,18 +1,16 @@
 import { 
-  DiPython, DiJavascript1, DiReact, DiNodejs, DiGit, DiMongodb, DiMysql, DiDocker,
-  DiJava
+  DiPython, DiJavascript1, DiMysql
 } from 'react-icons/di';
 import { 
-  SiTypescript, SiCplusplus, SiGo, SiR, SiTensorflow, SiPytorch, SiPandas,
-  SiNumpy, SiScikitlearn, SiDjango, SiFlask, SiNextdotjs, SiVuedotjs, SiAngular,
-  SiExpress, SiAmazonaws, SiMicrosoftazure, SiGooglecloud, SiKubernetes, SiRedis,
-  SiVisualstudiocode, SiPostman, SiJupyter, SiPowerbi, SiTableau, SiMicrosoftexcel,
-  SiPostgresql, SiGooglesheets, SiMicrosoftword, SiAlteryx, SiGoogledatastudio, SiSnowflake
+  SiR, SiPandas, SiNumpy, SiScikitlearn,
+  SiAmazonaws, SiMicrosoftazure, SiVisualstudiocode, 
+  SiJupyter, SiPowerbi, SiTableau, SiMicrosoftexcel,
+  SiPostgresql, SiGooglesheets, SiAlteryx, SiGoogledatastudio, SiSnowflake
 } from 'react-icons/si';
 import { TbBrandGoogleAnalytics, TbReportAnalytics, TbBrandMysql } from 'react-icons/tb';
-import { BsDatabase, BsDatabaseCheck, BsDatabaseGear } from 'react-icons/bs';
+import { BsDatabaseCheck } from 'react-icons/bs';
 import { MdOutlineCleaningServices, MdOutlineDataExploration } from 'react-icons/md';
-import { FaChartBar, FaChartLine, FaChartPie, FaSearch } from 'react-icons/fa';
+import { FaChartBar, FaChartLine, FaChartPie } from 'react-icons/fa';
 
 // Updated skills data with React Icons - focused on Data Analytics
 export const skills = [

@@ -8,7 +8,6 @@ const useSmoothScroll = () => {
   useEffect(() => {
     // Variables to track scrolling
     let ticking = false;
-    let lastScrollY = window.scrollY;
     
     // More efficient scroll handler using requestAnimationFrame
     const handleScroll = () => {
@@ -16,7 +15,6 @@ const useSmoothScroll = () => {
         window.requestAnimationFrame(() => {
           // Here you would do any scroll-related updates
           // For now, just ensuring smooth performance
-          lastScrollY = window.scrollY;
           ticking = false;
         });
         ticking = true;
