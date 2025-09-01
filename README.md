@@ -68,6 +68,37 @@ npm run build:prod
 npm run analyze
 ```
 
+## Deployment on Vercel
+
+This project is configured for seamless deployment on Vercel. Follow these steps:
+
+1. Create a Vercel account at [vercel.com](https://vercel.com) if you don't have one
+2. Install the Vercel CLI (optional)
+```bash
+npm install -g vercel
+```
+
+3. Deploy directly from GitHub:
+   - Connect your GitHub account to Vercel
+   - Select this repository
+   - Configure the project settings
+   - Add your environment variables (REACT_APP_EMAILJS_PUBLIC_KEY, REACT_APP_EMAILJS_SERVICE_ID, REACT_APP_EMAILJS_TEMPLATE_ID)
+   - Deploy
+
+4. Or deploy using Vercel CLI:
+```bash
+# Login to Vercel
+vercel login
+
+# Deploy (from project directory)
+vercel
+```
+
+5. For production deployment:
+```bash
+vercel --prod
+```
+
 ## Project Structure
 
 ```
