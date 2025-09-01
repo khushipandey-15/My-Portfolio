@@ -158,6 +158,6 @@ For questions, suggestions, or collaboration opportunities, please reach out thr
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 <div align="center">
-  <img src="public/assets/video/avatar2.gif" alt="Thank You Animation" width="200">
+  <img src="public/assets/video/avatar2.gif" alt="Thank You Animation" width="200"> 
   <p>Thanks for visiting! 👋</p>
 </div>
