@@ -181,7 +181,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 1.1 }}
           >
             <motion.a 
-              href="/resume.pdf" 
+              href={`${process.env.PUBLIC_URL}/resume.pdf`} 
               target="_blank" 
               rel="noreferrer" 
               className="btn-primary flex items-center gap-2"

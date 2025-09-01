@@ -189,12 +189,17 @@ const Resume = () => {
     console.log('Resume download initiated');
     
     try {
-      // Simulate download process
-      setTimeout(() => {
-        setDownloadStatus('success');
-        // Reset after 3 seconds
-        setTimeout(() => setDownloadStatus('idle'), 3000);
-      }, 1500);
+      // Create a link element and trigger download
+      const link = document.createElement('a');
+      link.href = `${process.env.PUBLIC_URL}/resume.pdf`;
+      link.download = 'Khushboo_Kumari_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      
+      setDownloadStatus('success');
+      // Reset after 3 seconds
+      setTimeout(() => setDownloadStatus('idle'), 3000);
     } catch (error) {
       console.error('Resume download failed', error);
       setDownloadStatus('error');
